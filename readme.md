@@ -30,7 +30,7 @@ It provides a registration form, stores employees in MySQL, and displays employe
 employee-app/
 ├─ server.js             # Main entry point
 ├─ package.json          # Dependencies
-├─ .env.example          # Example environment variables
+├─ .env          # Example environment variables
 ├─ config/
 │  └─ db.js              # MySQL database connection
 ├─ public/
@@ -69,7 +69,7 @@ mysql -u root -p < sql/schema.sql
 
 ### 4. Configure Environment Variables
 
-Copy `.env.example` → `.env` and update with your credentials:
+ update with your credentials in .env file:
 
 ```
 PORT=3000
@@ -121,7 +121,7 @@ Returns HTML table with all employees.
 
 ### 1. Launch EC2
 
-* Select **Amazon Linux 2** AMI
+* Select **Amazon Linux ** AMI
 * Open **port 3000** in Security Group (or later reverse proxy with Nginx to port 80)
 
 ### 2. Update System & Install Tools
@@ -159,7 +159,8 @@ sudo mysql
 ```
 In MySql
 ```bash
-
+alter user 'root'@'localhost' identified by 'your-Password';
+exit
 ```
 
 ### 5. Setup Database
@@ -173,11 +174,21 @@ mysql -u root -p < sql/schema.sql
 ### 6. Clone & Setup App
 
 ```bash
-git clone https://github.com/your-username/employee-app.git
+git clone https://github.com/swati-zampal/employee-app.git
 cd employee-app
 npm install
-cp .env.example .env   # edit DB creds
 nano .env              # update DB_USER, DB_PASSWORD, etc.
+```
+
+update with your credentials in .env file:
+
+```
+PORT=3000
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=yourpassword
+DB_NAME=employee_db
+DB_PORT=3306
 ```
 
 ### 7. Run App
