@@ -1,0 +1,29 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+  padding: 20px;
+}
+.container {
+  max-width: 600px;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+}
+label { display: block; margin-top: 10px; }
+input, button {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+}
+button {
+  background: #007bff;
+  color: white;
+  border: none;
+  margin-top: 15px;
+  cursor: pointer;
+}
+table { width: 100%; margin-top: 15px; border-collapse: collapse; }
+td, th { border: 1px solid #ccc; padding: 8px; }
+.message { background: #e6ffe6; padding: 8px; margin: 10px 0; }
+

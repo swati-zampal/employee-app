@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Employees</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Employees</h1>
+    <a href="/">Back</a>
+    <% if (employees.length === 0) { %>
+      <p>No employees found.</p>
+    <% } else { %>
+      <table>
+        <tr><th>ID</th><th>Name</th><th>Email</th><th>Department</th></tr>
+        <% employees.forEach(e => { %>
+          <tr>
+            <td><%= e.id %></td>
+            <td><%= e.name %></td>
+            <td><%= e.email %></td>
+            <td><%= e.department %></td>
+          </tr>
+        <% }) %>
+      </table>
+    <% } %>
+  </div>
+</body>
+</html>
+
